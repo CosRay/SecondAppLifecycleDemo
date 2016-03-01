@@ -16,17 +16,38 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        Log.i("MainActivity", "onCreate Called");
+    }
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
+    @Override
+    protected void onStart(){
+        super.onStart();
+        Log.i("MainActivity","onStart Called");
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        Log.i("MainActivity", "onResume Called");
+    }
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+        Log.i("MainActivity","onPause Called");
+    }
+
+    @Override
+    protected void onStop(){
+        super.onStop();
+        Log.i("MainActivity","onStop Called");
+    }
+
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        Log.i("MainActivity","onDestroy Called");
     }
 
     @Override
@@ -49,34 +70,5 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-    @Override
-    protected void onStart(){
-        super.onStart();
-        Log.i("MainActivity","onStart Called");
-    }
-
-    @Override
-    protected void onResume(){
-        super.onResume();
-        Log.i("MainActivity","onResume Called");
-    }
-
-    @Override
-    protected void onPause(){
-        super.onPause();
-        Log.i("MainActivity","onPause Called");
-    }
-
-    @Override
-    protected void onStop(){
-        super.onStop();
-        Log.i("MainActivity","onStop Called");
-    }
-
-    @Override
-    protected void onDestroy(){
-        super.onDestroy();
-        Log.i("MainActivity","onDestroy Called");
     }
 }
